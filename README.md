@@ -32,6 +32,7 @@ Dr.  Mohammad Samarah msamarah@umbc.edu
 - At church
   
 1.Secretary (TBD)
+
 2.Maryland food Bank integrator for Church.
 
 - At temple
