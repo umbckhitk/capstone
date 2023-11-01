@@ -1,0 +1,102 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" >
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Name of the Food Donated:</label>
+        </div>
+        <div class="col-25">
+          <input [(ngModel)]="this.inputlist.name" type="text" id="fname" name="firstname" placeholder="Enter Food Donated">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="place">Your Donation Place:</label>
+        </div>
+        <div class="col-25">
+          <input type="text" [(ngModel)]="this.inputlist.city" id="place" name="place" placeholder="Enter your place of donation">
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-25">
+          <label for="date">Product Avilable Until: </label>
+        </div>
+        <div class="col-25">
+          <input type="text" [(ngModel)]="this.inputlist.state" id="date" name="date" placeholder="Enter Date">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="units">No of Items:</label>
+        </div>
+        <div class="col-25">
+          <input type="text" [(ngModel)]="this.inputlist.availableUnits" id="units" name="units" placeholder="Enter Number">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="units">Upload the food Image Your are Donating:</label>
+</div>
+<div class="col-25">
+  <input type="file" class="file-input" (change)="onChange($event)" #fileUpload />
+  <section *ngIf="file" [ngSwitch]="status">
+
+    <button (click)="onUpload()">Upload the file</button>
+  <br>
+      <p *ngSwitchCase="'uploading'">⏳ Uploading...</p>
+      <p *ngSwitchCase="'success'">✅ Done!</p>
+      <p *ngSwitchCase="'fail'">❌ Error!</p>
+      <p *ngSwitchDefault>😶 Waiting to upload...</p>
+    </section>
+</div>
+  <div  class="col-25" *ngIf="file">
+    <section class="file-info">
+      File details:
+      <ul>
+        <li>Name: {{file.name}}</li>
+        <li>Type: {{file.type}}</li>
+        <li>Size: {{file.size}} bytes</li>
+      </ul>
+    </section>
+   
+  </div>
+
+
+</div>
+
+
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="Yname">Your Name:</label>
+        </div>
+        <div class="col-25">
+          <input type="text" id="Yname" [(ngModel)]="this.inputlist.laundry" name="Yname" placeholder="Your name..">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="phone">Phone Number:</label>
+        </div>
+        <div class="col-25">
+          <input type="text"  [(ngModel)]="this.inputlist.wifi" id="phone" name="phone" placeholder="Enter Your Phone number">
+        </div>
+      </div>
+
+
+      <div class="row">
+        <input type="submit" value="Submit">
+
+      </div>
+    </form>
+    <h1 >{{this.information}} </h1>
+  </div>
+
+
+
+
